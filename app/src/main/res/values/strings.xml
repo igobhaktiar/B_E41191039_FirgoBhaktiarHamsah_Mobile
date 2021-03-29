@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">layout</string>
+    <string name="to">to</string>
+    <string name="subject">subject</string>
+    <string name="message">message</string>
+    <string name="login">login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="reminder_name">reminder_name</string>
+    <string name="reminder">reminder</string>
+    <string name="done">done</string>
+    <string name="username">username</string>
+    <string name="masukkan_username">masukkan_username</string>
+    <string name="password_input">password_input</string>
+    <string name="masukkan_password">masukkan_password</string>
+    <string name="submit">submit</string>
+    <string name="scrollview">ScrollVIew</string>
+    <string name="linear_layout">linear_layout</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="relative_layout">relative_layout</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="frame_layout">frame_layout</string>
+    <string name="_5">5</string>
+    <string name="table_layout">table_layout</string>
+    <string name="_6">6</string>
+    <string name="material_design">material_design</string>
+    <string name="_7">7</string>
+    <string name="scroll_view">scroll_view</string>
+    <string name="_8">8</string>
+    <string name="scroll_view_horizontal">scroll_view_horizontal</string>
+    <string name="constaint_layout">Constaint_layout</string>
+    <string name="text_button">text_button</string>
+
+    <string-array name="spinner_date">
+        <item>Wed, June 27 2012</item>
+    </string-array>
+
+    <string-array name="spinner_jam">
+        <item>08:00 am</item>
+    </string-array>
+</resources>
