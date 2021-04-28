@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SQLite</string>
+    <string name="buat_biodata_baru">Buat Biodata Baru</string>
+    <string name="nomor">nomor</string>
+    <string name="nama">nama</string>
+    <string name="tanggal_lahir">tanggal_lahir</string>
+    <string name="jenis_kelamin">jenis_kelamin</string>
+    <string name="l_atau_p">l atau p</string>
+    <string name="alamat">alamat</string>
+    <string name="simpan">simpan</string>
+    <string name="kembali">kembali</string>
+</resources>
