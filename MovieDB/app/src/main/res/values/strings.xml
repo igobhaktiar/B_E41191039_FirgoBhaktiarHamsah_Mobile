@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">MovieDB</string>
+    <string name="app_name">JSON and API</string>
+    <string name="json">JSON</string>
+    <string name="halo_firgo">Halo, Firgo</string>
+    <string name="rekomendasi_film">Rekomendasi Film</string>
 </resources>
