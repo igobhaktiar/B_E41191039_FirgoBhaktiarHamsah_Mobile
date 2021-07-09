@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">ProjectEbussi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favourites">Favourites</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="cocok_buat_yang_lagi_diet">Cocok buat yang lagi diet</string>
+    <string name="show_more">Show more</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="check_all">Check All</string>
+    <string name="checkout">Checkout</string>
+    <string name="total">Total</string>
+    <string name="scrollview" />
+    <string name="wortel">Wortel</string>
+    <string name="rp_20_000">Rp. 20,000</string>
+    <string name="_1">1</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="nama">Nama</string>
+    <string name="belum_punya_akun">Belum Punya akun ?</string>
+    <string name="klik_disini">Klik disini</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sudah_punya_akun_klik_disini">Sudah Punya akun? klik disini</string>
+    <string name="logout">Logout</string>
+    <string name="my_profil">My Profile</string>
+    <string name="nama_user">Nama User</string>
+    <string name="nomor_telp">Nomor Telp</string>
+    <string name="ubah_profile">Ubah Profile</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="riwayat_belanja">Riwayat belanja</string>
+    <string name="no_handphone">No. Handphone</string>
+    <string name="alamat">Alamat</string>
+    <string name="ubah_profil">Ubah Profil</string>
+    <string name="simpan">Simpan</string>
+    <string name="sayur_segar">Sayur Segar</string>
+    <string name="nama_produk">Nama Produk</string>
+    <string name="stok">Stok</string>
+    <string name="_12">12</string>
+    <string name="rp">Rp.</string>
+    <string name="rp_0">Rp.0</string>
+    <string name="deskripsi">Deskripsi</string>
+</resources>
