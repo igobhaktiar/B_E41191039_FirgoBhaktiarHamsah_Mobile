@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        rvProduk.adapter = AdapterProduk(listProduk)
+        rvProduk.adapter = AdapterProduk(requireActivity(),listProduk)
         rvProduk.layoutManager = layoutManager
 
     }
