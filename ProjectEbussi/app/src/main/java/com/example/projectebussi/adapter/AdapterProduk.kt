@@ -9,6 +9,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectebussi.R
 import com.example.projectebussi.model.Produk
+import com.squareup.picasso.Picasso
+import java.text.NumberFormat
+import java.util.*
 
 class AdapterProduk(var data:ArrayList<Produk>):RecyclerView.Adapter<AdapterProduk.Holder>() {
 
@@ -29,9 +32,15 @@ class AdapterProduk(var data:ArrayList<Produk>):RecyclerView.Adapter<AdapterProd
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.tvNama.text = data[position].nama_produk
         holder.deskripsi.text = data[position].keterangan
-        holder.tvHarga.text = data[position].harga_produk.toString()
-        holder.tvStok.text = data[position].stok.toString()
-//        holder.imgProduk.setImageResource(data[position].foto_produk)
+        holder.tvHarga.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format( data[position].harga_produk)
+        holder.tvStok.text =  "Stok : " + data[position].stok.toString()
+
+        val image = "http://192.168.43.136/uploads/"+data[position].foto_produk
+        Picasso.get()
+            .load(image)
+            .placeholder(R.drawable.wortel)
+            .error(R.drawable.wortel)
+            .into(holder.imgProduk)
     }
 
     override fun getItemCount(): Int {

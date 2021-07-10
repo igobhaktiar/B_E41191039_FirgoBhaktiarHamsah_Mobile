@@ -18,6 +18,7 @@
             android:layout_height="150dp"
             android:src="@drawable/wortel"/>
         <LinearLayout
+            android:layout_marginLeft="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -47,15 +48,6 @@
                 android:layout_marginTop="8dp"
                 android:textSize="16sp"
                 android:layout_marginHorizontal="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/stok"/>
-
-            <TextView
-                android:textColor="#8F8F8F"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:layout_marginHorizontal="5dp"
                 android:id="@+id/tv_stok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,14 +57,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:textColor="@color/green"
-                android:layout_marginBottom="10dp"
-                android:textSize="16sp"
-                android:layout_marginHorizontal="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rp"/>
             <TextView
                 android:textColor="@color/green"
                 android:layout_marginBottom="10dp"
