@@ -6,7 +6,7 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface ApiService {
+interface  ApiService {
 
     @FormUrlEncoded
     @POST("register")

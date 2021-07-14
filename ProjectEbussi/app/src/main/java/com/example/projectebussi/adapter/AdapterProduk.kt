@@ -13,6 +13,7 @@ import com.example.projectebussi.DetailProdukActivity
 import com.example.projectebussi.R
 import com.example.projectebussi.helper.Helper
 import com.example.projectebussi.model.Produk
+import com.example.projectebussi.util.Config
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import java.util.*
@@ -39,7 +40,7 @@ class AdapterProduk(var activity: Activity,var data:ArrayList<Produk>):RecyclerV
         holder.tvHarga.text = Helper().gantiRupiah(data[position].harga_produk.toString())
         holder.tvStok.text =  "Stok : " + data[position].stok.toString()
 
-        val image = "http://192.168.43.136/uploads/"+data[position].foto_produk
+        val image = Config.produkUrl +data[position].foto_produk
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.wortel)
