@@ -1,13 +1,19 @@
 package com.example.projectebussi.fragments
 
+import android.app.Dialog
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projectebussi.MainActivity
 import com.example.projectebussi.R
 import com.example.projectebussi.adapter.AdapterKeranjang
 import com.example.projectebussi.app.ApiConfig
@@ -148,12 +154,16 @@ class Keranjang : Fragment() {
         ApiConfig.instanceRetrofit.checkout(checkout).enqueue(object : Callback<ResponModel> {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 val respon =response.body()!!
+
                 if (respon.success == 1){
                     val listDelete = ArrayList<Produk>()
                     for (p in listProduk) {
                         if (p.selected) listDelete.add(p)
                     }
                     delete(listDelete)
+
+                    customDialog()
+
                     Toast.makeText(requireContext(), "Transaksi Berhasil ", Toast.LENGTH_SHORT).show()
                 }
                 else{
@@ -165,6 +175,20 @@ class Keranjang : Fragment() {
                 Toast.makeText(requireContext(), "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    private fun customDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(R.layout.activity_customdialog)
+
+        val btnTutup = dialog.findViewById<Button>(R.id.btnCD)
+        btnTutup.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
+        dialog.show()
     }
 
     private fun delete(data: ArrayList<Produk>) {
