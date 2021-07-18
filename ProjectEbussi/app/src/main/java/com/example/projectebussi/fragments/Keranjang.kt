@@ -29,9 +29,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_keranjang.*
+import kotlinx.coroutines.selects.select
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.FieldPosition
 
 class Keranjang : Fragment() {
 
@@ -77,10 +79,10 @@ class Keranjang : Fragment() {
     }
     var totalHarga = 0
     fun hitungTotal(){
-        val listProduk = myDB.daoKeranjang().getAll() as ArrayList
+        val p = myDB.daoKeranjang().getAll() as ArrayList
         totalHarga = 0
         var isSelectedAll = true
-        for (produk in listProduk){
+        for (produk in p){
             if (produk.selected) {
                 totalHarga += (produk.harga_produk * produk.jumlah)
             } else{
@@ -92,6 +94,9 @@ class Keranjang : Fragment() {
     }
 
     private fun mainButton(){
+
+
+
         btnDelete.setOnClickListener {
             val listDelete = ArrayList<Produk>()
             for (p in listProduk) {
@@ -103,12 +108,12 @@ class Keranjang : Fragment() {
 
         btnBayar.setOnClickListener {
             var isThereProduk = false
-
             for (p in listProduk) { if (p.selected) isThereProduk = true
             }
             if (isThereProduk) {
                 bayar()
-            } else {
+            }
+            else {
                 Toast.makeText(requireContext(), "Tidak ada produk yg terpilih", Toast.LENGTH_SHORT).show()
         }
 

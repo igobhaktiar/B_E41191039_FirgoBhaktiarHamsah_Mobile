@@ -121,7 +121,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Informasi Pengiriman"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:text="Informasi tujuan pengiriman"
                             android:textColor="@color/black" />
 
                         <LinearLayout

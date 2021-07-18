@@ -45,7 +45,7 @@ class AdapterDetailTransaksi(var data: ArrayList<DetailTransaksi>) : RecyclerVie
         val name = a.produk.nama_produk
         val p = a.produk
         holder.tvNama.text = name
-        holder.tvBerat.text = p.beratisi_produk.toString()
+        holder.tvBerat.text = p.beratisi_produk.toString() + " Kg"
         holder.tvHarga.text = Helper().gantiRupiah(p.harga_produk)
         holder.tvTotalHarga.text = Helper().gantiRupiah(a.jumlah_harga)
         holder.tvJumlah.text = a.jumlah.toString() + " Items"

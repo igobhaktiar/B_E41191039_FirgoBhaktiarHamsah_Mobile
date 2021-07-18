@@ -42,9 +42,14 @@ class DetailProdukActivity : AppCompatActivity() {
     private fun mainButton(){
         btn_keranjang.setOnClickListener {
             val data = myDb.daoKeranjang().getProduk(produk.id)
-            if (data == null){
+            val stok = produk.stok
+
+            if (stok <= 0){
+                Toast.makeText(this, "Stok sayuran tidak tersedia", Toast.LENGTH_LONG).show()
+            } else if (data == null){
                 insert()
-            } else{
+            }
+            else{
                 data.jumlah += 1
                 update(data)
             }
