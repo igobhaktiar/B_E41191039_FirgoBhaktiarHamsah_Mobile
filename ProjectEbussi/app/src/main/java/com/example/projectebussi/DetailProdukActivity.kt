@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.projectebussi.helper.Helper
+import com.example.projectebussi.helper.SharedPref
 import com.example.projectebussi.model.Produk
 import com.example.projectebussi.room.MyDatabase
 import com.example.projectebussi.util.Config
@@ -24,11 +25,14 @@ class DetailProdukActivity : AppCompatActivity() {
 
     lateinit var myDb: MyDatabase
     lateinit var produk: Produk
+    private lateinit var s: SharedPref
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_produk)
         myDb = MyDatabase.getInstance(this)!! // call database
+        s = SharedPref(this)
 
         getInfo()
         mainButton()
@@ -46,18 +50,15 @@ class DetailProdukActivity : AppCompatActivity() {
             }
 
         }
-        btn_favorit.setOnClickListener {
-            val listData = myDb.daoKeranjang().getAll() // get All data
-            for(note :Produk in listData){
-                println("-----------------------")
-                println(note.nama_produk)
-                println(note.harga_produk)
-            }
-        }
+
         btn_toKeranjang.setOnClickListener {
-            val intent = Intent("event:keranjang")
-            LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
-            onBackPressed()
+            if (s.getStatusLogin()) {
+                val intent = Intent("event:keranjang")
+                LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+                onBackPressed()
+            }else {
+                startActivity(Intent(this, login::class.java))
+            }
         }
     }
 
@@ -116,6 +117,7 @@ class DetailProdukActivity : AppCompatActivity() {
         Helper().setToolbar(this, toolbar, produk.nama_produk)
 
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

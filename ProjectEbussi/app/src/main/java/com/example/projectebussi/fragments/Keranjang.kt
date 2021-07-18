@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectebussi.MainActivity
 import com.example.projectebussi.R
+import com.example.projectebussi.Riwayat
 import com.example.projectebussi.adapter.AdapterKeranjang
 import com.example.projectebussi.app.ApiConfig
 import com.example.projectebussi.helper.Helper
@@ -28,7 +29,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_keranjang.*
-import kotlinx.android.synthetic.main.login_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,12 +36,14 @@ import retrofit2.Response
 class Keranjang : Fragment() {
 
     lateinit var myDB : MyDatabase
+    private lateinit var s:SharedPref
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_keranjang, container, false)
         init(view)
         myDB = MyDatabase.getInstance(requireActivity())!!
+        s = SharedPref(requireActivity())
         mainButton()
 
 
@@ -102,8 +104,7 @@ class Keranjang : Fragment() {
         btnBayar.setOnClickListener {
             var isThereProduk = false
 
-            for (p in listProduk) {
-                if (p.selected) isThereProduk = true
+            for (p in listProduk) { if (p.selected) isThereProduk = true
             }
             if (isThereProduk) {
                 bayar()
@@ -184,10 +185,16 @@ class Keranjang : Fragment() {
         dialog.setContentView(R.layout.activity_customdialog)
 
         val btnTutup = dialog.findViewById<Button>(R.id.btnCD)
+        val btnRiwayat = dialog.findViewById<Button>(R.id.btn_toRiwayat)
+
         btnTutup.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         }
+        btnRiwayat.setOnClickListener {
+            startActivity(Intent(requireContext(), Riwayat::class.java))
+        }
+
         dialog.show()
     }
 
